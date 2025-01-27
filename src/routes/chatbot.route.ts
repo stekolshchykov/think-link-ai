@@ -1,9 +1,8 @@
 import { Router } from 'express';
-import { handleChat } from '../controllers/chatbot.controller';
+import { handleChatRequest } from '../controllers/chatbot.controller';
 
 const router = Router();
 
-// POST маршрут для обработки сообщений чат-бота
-router.post('/query', handleChat);
+router.post('/chat', handleChatRequest);
 
 export default router;
