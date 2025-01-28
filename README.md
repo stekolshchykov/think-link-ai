@@ -111,7 +111,7 @@ graph TD
     G --> H[Redis Session]
 API Endpoints 📡
 Chat Interface
-POST /api/v1/chat
+POST /api/chat
 ```
 
 Example Request:
