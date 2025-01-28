@@ -34,7 +34,7 @@ cp .env.example .env
 Edit the .env file:
 
 
-```JSON
+```bash
 PORT=3000
 REDIS_URL=redis://localhost:6379
 SESSION_SECRET=your_session_secret
