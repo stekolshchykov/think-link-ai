@@ -15,7 +15,50 @@ The code serves as a working prototype and requires thorough testing before depl
 - **Session Cache**: Redis-powered conversation context
 - **Model Configuration**: Fine-tune parameters for each provider
 
-## Quick Start 🛠️
+## Quick Start with Docker🛠️
+
+To build and run the project using Docker, follow these steps:
+
+1. Build the Docker image:
+   ```bash
+   docker build -t think-link-ai .
+   ```
+
+2. Run the container:
+   ```bash
+   docker run -d -p 3000:3000 think-link-ai
+   ```
+
+The application will be accessible at `http://localhost:3000`.
+
+## Main Commands
+
+Here are the main commands to work with the project:
+
+- **Build the project:**
+  ```bash
+  npm run build
+  ```
+
+- **Start the project in production mode:**
+  ```bash
+  npm start
+  ```
+
+- **Start the project in development mode:**
+  ```bash
+  npm run dev
+  ```
+
+- **Run tests:**
+  ```bash
+  npm test
+  ```
+
+- **Lint the code:**
+  ```bash
+  npm run lint
+  ```
 
 ### Prerequisites
 - Node.js 18.x+

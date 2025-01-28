@@ -6,14 +6,17 @@ WORKDIR /app
 # Копирование файлов
 COPY package*.json ./
 
-# Установка зависимостей
-RUN npm install --only=production
+# Установка всех зависимостей
+RUN npm install
 
 # Копирование исходного кода
 COPY . .
 
 # Компиляция TypeScript
 RUN npm run build
+
+# Удаление devDependencies после сборки
+RUN npm prune --production
 
 # Экспонирование порта
 EXPOSE 3000
