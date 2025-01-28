@@ -1,7 +1,7 @@
+import config from '../config';
 import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { deepseek } from '@ai-sdk/deepseek';
-import config from '../config';
 
 function getProvider() {
   switch (config.AI_PROVIDER) {
@@ -25,10 +25,23 @@ function getProvider() {
 }
 
 export async function generateResponse(prompt: string): Promise<string> {
+  // Check the knowledge base first
+  const matchedFAQ = config.KNOWLEDGE_BASE.faq.find((faq: { question: string }) =>
+    prompt.toLowerCase().includes(faq.question.toLowerCase())
+  );
+
+  console.log('Matched FAQ:', JSON.stringify(config.KNOWLEDGE_BASE.faq));
+  console.log("prompt", prompt)
+
+  if (matchedFAQ) {
+    return matchedFAQ.answer;
+  }
+
+  // If no match is found, proceed with AI model
   const model = getProvider();
   const { text } = await generateText({
     model,
-    prompt,
+    prompt: `${prompt}. Check if the answer is in my knowledge base first: ${config.KNOWLEDGE_BASE.faq}`,
   });
   return text;
 }
