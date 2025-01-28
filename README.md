@@ -4,6 +4,9 @@ Advanced AI assistant with multi-provider support and dynamic response routing.
 
 This is a test project created for Simulated Work Experience by the Barber 4 group. It was developed by Vitali Stekolshchykov and Kateryna Butska.
 
+The code serves as a working prototype and requires thorough testing before deployment to production.
+
+
 ## Features 🚀
 
 - **Multi-provider AI**: Switch between OpenAI GPT-4o and DeepSeek
