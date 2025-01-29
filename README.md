@@ -126,5 +126,6 @@ Example Response:
 }
 ```
 
-License 📄
+## License 📄
+
 Distributed under the MIT License. See  [LICENSE](https://opensource.org/license/MIT)
